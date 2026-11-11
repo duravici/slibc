@@ -1,14 +1,17 @@
 #ifndef _STDDEF_H_
 #define _STDDEF_H_
 
+/* ISO/IEC 9899:1999
+ * 7.17 Common definitions <stddef.h> */
+
 #include <sys/_null.h>
 
 #define __REQUIRE_ptrdiff_t
 #define __REQUIRE_size_t
 #define __REQUIRE_wchar_t
 
+/* max_align_t: C++11 only, C99 has no such type */
 #if __cplusplus >= 201103L
-/* NOTE: exposed to C++11 builds only, C99 doesn't have a max_align_t type */
 #define __REQUIRE_max_align_t
 #endif /* __cplusplus >= 201103L */
 

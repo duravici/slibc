@@ -3,6 +3,9 @@
 
 #ifndef __cplusplus
 
+/* ISO/IEC 9899:1999
+ * 7.9 Alternative spellings <iso646.h> */
+
 #define and    &&
 #define and_eq &=
 #define bitand &

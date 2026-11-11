@@ -6,65 +6,37 @@
 /* ISO/IEC 9899:1999
  * 5.2.4.2.1 Sizes of integer types <limits.h> */
 
-/* number of bits for smallest object that is not a bit-field (byte) */
-#define CHAR_BIT 8
+#define CHAR_BIT   8                         /* number of bits in a byte */
 
-/* maximum value for an object of type signed char */
-#define SCHAR_MAX (0x7f)
+#define SCHAR_MAX  (0x7f)                    /* max value of signed char */
+#define SCHAR_MIN  (-SCHAR_MAX - 1)          /* min value of signed char */
+#define UCHAR_MAX  (0xff)                    /* max value of unsigned char */
 
-/* minimum value for an object of type signed char */
-#define SCHAR_MIN (-SCHAR_MAX - 1)
-
-/* maximum value for an object of type unsigned char */
-#define UCHAR_MAX (0xff)
-
-/* char signedness, thanks, musl.. :) */
+/* thanks, musl.. */
 #if '\xff' > 0
-/* minimum value for an object of type char */
-#define CHAR_MIN 0
-
-/* maximum value for an object of type char */
-#define CHAR_MAX UCHAR_MAX
+#define CHAR_MIN   0                         /* min value of char */
+#define CHAR_MAX   UCHAR_MAX                 /* max value of char */
 #else
-#define CHAR_MIN SCHAR_MIN
-#define CHAR_MAX SCHAR_MAX
+#define CHAR_MIN   SCHAR_MIN                 /* min value of char */
+#define CHAR_MAX   SCHAR_MAX                 /* max value of char */
 #endif /* '\xff' > 0 */
 
-/* maximum number of bytes in a multibyte character, for any supported locale */
-#define MB_LEN_MAX 4 /* 21-bit UTF-8 */
+#define MB_LEN_MAX 4                         /* max bytes in a multibyte char (UTF-8) */
 
-/* maximum value for an object of type short int */
-#define SHRT_MAX (0x7fff)
+#define SHRT_MAX   (0x7fff)                  /* max value of short */
+#define SHRT_MIN   (-SHRT_MAX - 1)           /* min value of short */
+#define USHRT_MAX  (0xffff)                  /* max value of unsigned short */
 
-/* minimum value for an object of type short int */
-#define SHRT_MIN (-SHRT_MAX - 1)
+#define INT_MAX    (0x7fffffff)              /* max value of int */
+#define INT_MIN    (-INT_MAX - 1)            /* min value of int */
+#define UINT_MAX   (0xffffffffU)             /* max value of unsigned int */
 
-/* maximum value for an object of type unsigned short int */
-#define USHRT_MAX (0xffff)
+#define LONG_MIN   (-LONG_MAX - 1L)          /* min value of long */
+#define ULONG_MAX  (LONG_MAX * 2UL + 1UL)    /* max value of unsigned long */
 
-/* maximum value for an object of type int */
-#define INT_MAX (0x7fffffff)
-
-/* minimum value for an object of type int */
-#define INT_MIN (-INT_MAX - 1)
-
-/* maximum value for an object of type unsigned int */
-#define UINT_MAX (0xffffffffU)
-
-/* minimum value for an object of type long int */
-#define LONG_MIN (-LONG_MAX - 1L)
-
-/* maximum value for an object of type unsigned long int */
-#define ULONG_MAX (LONG_MAX * 2UL + 1UL)
-
-/* maximum value for an object of type long long int */
-#define LLONG_MAX (0x7fffffffffffffffLL)
-
-/* minimum value for an object of type long long int */
-#define LLONG_MIN (-LLONG_MAX - 1LL)
-
-/* maximum value for an object of type unsigned long long int */
-#define ULLONG_MAX (LLONG_MAX * 2ULL + 1ULL)
+#define LLONG_MAX  (0x7fffffffffffffffLL)    /* max value of long long */
+#define LLONG_MIN  (-LLONG_MAX - 1LL)        /* min value of long long */
+#define ULLONG_MAX (LLONG_MAX * 2ULL + 1ULL) /* max value of unsigned long long */
 
 /* TODO: Cover POSIX as well */
 

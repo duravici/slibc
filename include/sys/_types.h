@@ -59,12 +59,10 @@ typedef __wchar_t wchar_t;
 #endif
 
 #if defined(__REQUIRE_max_align_t) && !defined(__DEFINED_max_align_t)
-#if __cplusplus >= 201103L
 typedef struct {
-	alignas(8) long long __ll;
-	long double          __ld;
+	__MAX_ALIGN_LL long long __ll;
+	long double              __ld;
 } max_align_t;
-#endif /* __cplusplus >= 201103L */
 #define __DEFINED_max_align_t
 #endif
 

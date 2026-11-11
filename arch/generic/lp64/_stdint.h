@@ -6,14 +6,15 @@ typedef long unsigned int uint_fast32_t;
 
 /* ISO/IEC 9899:1999
  * 7.18.1.4 Integer types capable of holding object pointers */
+
 typedef long int          intptr_t;
 typedef long unsigned int uintptr_t;
 
-#define INT_FAST16_MIN INT64_MIN
-#define INT_FAST32_MIN INT64_MIN
+#define INT_FAST16_MIN  INT64_MIN
+#define INT_FAST32_MIN  INT64_MIN
 
-#define INT_FAST16_MAX INT64_MAX
-#define INT_FAST32_MAX INT64_MAX
+#define INT_FAST16_MAX  INT64_MAX
+#define INT_FAST32_MAX  INT64_MAX
 
 #define UINT_FAST16_MAX UINT64_MAX
 #define UINT_FAST32_MAX UINT64_MAX
@@ -22,10 +23,10 @@ typedef long unsigned int uintptr_t;
  * 7.18.2.4 Limits of integer types capable of holding object pointers */
 
 /* minimum value of pointer-holding signed integer type */
-#define INTPTR_MIN INT64_MIN
+#define INTPTR_MIN  INT64_MIN
 
 /* maximum value of pointer-holding signed integer type */
-#define INTPTR_MAX INT64_MAX
+#define INTPTR_MAX  INT64_MAX
 
 /* maximum value of pointer-holding unsigned integer type */
 #define UINTPTR_MAX UINT64_MAX
